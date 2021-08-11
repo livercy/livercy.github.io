@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="关于hexo 首页图片无法显示解决方法, livercy&#39;s blog">
+    <meta name="keywords" content="使用arduino输出QMC5883L的三轴磁场和YAW角, livercy&#39;s blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>关于hexo 首页图片无法显示解决方法 | livercy&#39;s blog</title>
+    <title>使用arduino输出QMC5883L的三轴磁场和YAW角 | livercy&#39;s blog</title>
     <link rel="icon" type="image/png" href="/cryo_blue.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -527,12 +527,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/starsky.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/range_3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">关于hexo 首页图片无法显示解决方法</h1>
+                    <h1 class="description center-align post-title">使用arduino输出QMC5883L的三轴磁场和YAW角</h1>
                 </div>
             </div>
         </div>
@@ -648,12 +648,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
+                            <a href="/tags/arduino/">
+                                <span class="chip bg-color">arduino</span>
                             </a>
                         
-                            <a href="/tags/JavaScript/">
-                                <span class="chip bg-color">JavaScript</span>
+                            <a href="/tags/c-c/">
+                                <span class="chip bg-color">c/c++</span>
                             </a>
                         
                     </div>
@@ -668,7 +668,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-10
+                    2021-08-11
                 </div>
                 
 
@@ -689,12 +689,37 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="/images/pasted-6.png" alt="upload successful"></p>
-<p>有时Markdown可以显示图片，而上传hexo后无法显示图片，只要在Markdown的图片显示链接中将“\”修改为“/”，同时删除第一个和最后一个“\”</p>
-<p><img src="/images/pasted-3.png" alt="upload successful"></p>
-<p>修改为</p>
-<p><img src="/images/pasted-4.png" alt="upload successful"></p>
-<p>即可显示在hexo</p>
+                <p>通过IIC输出三轴磁力原始数据<br>通过MechaQMC5883库输出yaw角<br>我找了不少关于QMC磁力计的文章，发现不管是商家给的程序还是博客的其他文章，都是基于stm32的，而QMC在arduino上的应用却没多少，于是就一边看着数据文档，一边在arduino上实现QMC。</p>
+<p>这里用的是arduino nano,</p>
+<p>引脚连接：</p>
+<p>nano -&gt; QMC</p>
+<p>5V -&gt; VCC</p>
+<p>A5 -&gt; SCL</p>
+<p>A4 -&gt; SDA</p>
+<p>GND -&gt; GND</p>
+<p>首先在例程中找到I2C_scanner,打开，连接QMC，上传。</p>
+<p><img src="/images/pasted-7.png"></p>
+<p>如果没有这个例程，这里给出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// --------------------------------------</span><br><span class="line">// i2c_scanner</span><br><span class="line">//</span><br><span class="line">// Version 1</span><br><span class="line">//    This program (or code that looks like it)</span><br><span class="line">//    can be found <span class="keyword">in</span> many places.</span><br><span class="line">//    For example on the Arduino.cc forum.</span><br><span class="line">//    The original author is not know.</span><br><span class="line">// Version 2, Juni 2012, Using Arduino 1.0.1</span><br><span class="line">//     Adapted to be as simple as possible by Arduino.cc user Krodal</span><br><span class="line">// Version 3, Feb 26  2013</span><br><span class="line">//    V3 by louarnold</span><br><span class="line">// Version 4, March 3, 2013, Using Arduino 1.0.3</span><br><span class="line">//    by Arduino.cc user Krodal.</span><br><span class="line">//    Changes by louarnold removed.</span><br><span class="line">//    Scanning addresses changed from 0...127 to 1...119,</span><br><span class="line">//    according to the i2c scanner by Nick Gammon</span><br><span class="line">//    https://www.gammon.com.au/forum/?id=10896</span><br><span class="line">// Version 5, March 28, 2013</span><br><span class="line">//    As version 4, but address scans now to 127.</span><br><span class="line">//    A sensor seems to use address 120.</span><br><span class="line">// Version 6, November 27, 2015.</span><br><span class="line">//    Added waiting <span class="keyword">for</span> the Leonardo serial communication.</span><br><span class="line">//</span><br><span class="line">//</span><br><span class="line">// This sketch tests the standard 7-bit addresses</span><br><span class="line">// Devices with higher bit address might not be seen properly.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line"><span class="comment">#include &lt;Wire.h&gt;</span></span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">setup</span></span>() &#123;</span><br><span class="line">  Wire.begin();</span><br><span class="line"></span><br><span class="line">  Serial.begin(9600);</span><br><span class="line">  <span class="keyword">while</span> (!Serial); // Leonardo: <span class="built_in">wait</span> <span class="keyword">for</span> serial monitor</span><br><span class="line">  Serial.println(<span class="string">&quot;\nI2C Scanner&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">loop</span></span>() &#123;</span><br><span class="line">  int nDevices = 0;</span><br><span class="line"></span><br><span class="line">  Serial.println(<span class="string">&quot;Scanning...&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (byte address = 1; address &lt; 127; ++address) &#123;</span><br><span class="line">    // The i2c_scanner uses the <span class="built_in">return</span> value of</span><br><span class="line">    // the Write.endTransmisstion to see <span class="keyword">if</span></span><br><span class="line">    // a device did acknowledge to the address.</span><br><span class="line">    Wire.beginTransmission(address);</span><br><span class="line">    byte error = Wire.endTransmission();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (error == 0) &#123;</span><br><span class="line">      Serial.print(<span class="string">&quot;I2C device found at address 0x&quot;</span>);</span><br><span class="line">      <span class="keyword">if</span> (address &lt; 16) &#123;</span><br><span class="line">        Serial.print(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      Serial.print(address, HEX);</span><br><span class="line">      Serial.println(<span class="string">&quot;  !&quot;</span>);</span><br><span class="line"></span><br><span class="line">      ++nDevices;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (error == 4) &#123;</span><br><span class="line">      Serial.print(<span class="string">&quot;Unknown error at address 0x&quot;</span>);</span><br><span class="line">      <span class="keyword">if</span> (address &lt; 16) &#123;</span><br><span class="line">        Serial.print(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      Serial.println(address, HEX);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (nDevices == 0) &#123;</span><br><span class="line">    Serial.println(<span class="string">&quot;No I2C devices found\n&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    Serial.println(<span class="string">&quot;done\n&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  delay(5000); // Wait 5 seconds <span class="keyword">for</span> next scan</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>上传后，打开串口监视器，可以看见QMC的地址</p>
+<p><img src="/images/pasted-8.png"></p>
+<p>然后编写程序：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;Wire.h&gt;           //使用IIC库</span></span><br><span class="line"><span class="comment">#define address 0x0D        //QMC5883L的设备地址设置</span></span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">setup</span></span>()&#123;</span><br><span class="line">  Serial.begin(9600);  //初始化串口和I2C口</span><br><span class="line">  Wire.begin();</span><br><span class="line">//初始化模块</span><br><span class="line">  Wire.beginTransmission(address);</span><br><span class="line">  Wire.write(0x09); //选择控制寄存器0X09</span><br><span class="line">  Wire.write(0x1D); //设置0x09寄存器为：OSR:512Hz，RNG：+/-8Gauss，ODG：200Hz，MODE：连续工作模式</span><br><span class="line">  Wire.endTransmission();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">loop</span></span>()&#123;</span><br><span class="line"></span><br><span class="line">  int x,y,z; //triple axis data</span><br><span class="line"></span><br><span class="line">  Wire.beginTransmission(address);//读写开始</span><br><span class="line">  Wire.write(0x00); //选择X,Y，Z所在数据储存寄存器</span><br><span class="line">  Wire.endTransmission();</span><br><span class="line"></span><br><span class="line">//读取X、Y、Z三个方向的坐标值</span><br><span class="line">  Wire.requestFrom(address, 6);</span><br><span class="line">  <span class="keyword">if</span>(6&lt;=Wire.available())&#123;</span><br><span class="line">    x = Wire.read()&lt;&lt;<span class="string">8; //X msb</span></span><br><span class="line"><span class="string">    x |= Wire.read(); //X lsb</span></span><br><span class="line"><span class="string">    z = Wire.read()&lt;&lt;8</span>; //Z msb</span><br><span class="line">    z |= Wire.read(); //Z lsb</span><br><span class="line">    y = Wire.read()&lt;&lt;<span class="string">8; //Y msb</span></span><br><span class="line"><span class="string">    y |= Wire.read(); //Y lsb</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">//打印坐标到串口</span></span><br><span class="line"><span class="string">  Serial.print(&quot;x: &quot;);</span></span><br><span class="line"><span class="string">  Serial.print(x);</span></span><br><span class="line"><span class="string">  Serial.print(&quot;  y: &quot;);</span></span><br><span class="line"><span class="string">  Serial.print(y);</span></span><br><span class="line"><span class="string">  Serial.print(&quot;  z: &quot;);</span></span><br><span class="line"><span class="string">  Serial.println(z);</span></span><br><span class="line"><span class="string">  delay(100);</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+<p>这里会输出三轴磁力数据：</p>
+<p><img src="/images/pasted-9.png"></p>
+<p>但这些还没有转为角度，使用下面这个链接中的库转为yaw角：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/keepworking/Mecha_QMC5883L">https://github.com/keepworking/Mecha_QMC5883L</a></p>
+<p>下载这个库，并保存至你的arduino库位置中：</p>
+<p>…\Arduino\libraries</p>
+<p>将文件名修改为MechaQMC5883</p>
+<p>编写以下代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;Wire.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;MechaQMC5883.h&gt;</span></span><br><span class="line"></span><br><span class="line">MechaQMC5883 qmc;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">setup</span></span>() &#123;</span><br><span class="line">  Wire.begin();</span><br><span class="line">  Serial.begin(9600);</span><br><span class="line">  qmc.init();</span><br><span class="line">  //qmc.setMode(Mode_Continuous,ODR_200Hz,RNG_2G,OSR_256);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">loop</span></span>() &#123;</span><br><span class="line">  int x,y,z;</span><br><span class="line">  int yaw;</span><br><span class="line">  qmc.read(&amp;x,&amp;y,&amp;z);</span><br><span class="line">  yaw = qmc.azimuth(&amp;y,&amp;x);</span><br><span class="line"></span><br><span class="line">  Serial.print(<span class="string">&quot;x: &quot;</span>);</span><br><span class="line">  Serial.print(x);</span><br><span class="line">  Serial.print(<span class="string">&quot; y: &quot;</span>);</span><br><span class="line">  Serial.print(y);</span><br><span class="line">  Serial.print(<span class="string">&quot; z: &quot;</span>);</span><br><span class="line">  Serial.print(z);</span><br><span class="line">  Serial.print(<span class="string">&quot; yaw: &quot;</span>);</span><br><span class="line">  Serial.print(yaw);</span><br><span class="line">  Serial.println();</span><br><span class="line">  delay(100);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上传，打开串口监视器：</p>
+<p><img src="/images/pasted-10.png"></p>
+<p>已经输出yaw角！</p>
 
                 
             </div>
@@ -721,7 +746,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://livercy.top/posts/428be35.html">http://livercy.top/posts/428be35.html</a>
+                    <a href="http://livercy.top/posts/a012d6f7.html">http://livercy.top/posts/a012d6f7.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -759,12 +784,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
+                                <a href="/tags/arduino/">
+                                    <span class="chip bg-color">arduino</span>
                                 </a>
                             
-                                <a href="/tags/JavaScript/">
-                                    <span class="chip bg-color">JavaScript</span>
+                                <a href="/tags/c-c/">
+                                    <span class="chip bg-color">c/c++</span>
                                 </a>
                             
                         </div>
@@ -940,12 +965,12 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/a012d6f7.html">
+                <a href="/posts/33329d65.html">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/range_3.jpg" class="responsive-img" alt="使用arduino输出QMC5883L的三轴磁场和YAW角">
+                        <img src="/medias/featureimages/flower.jpg" class="responsive-img" alt="openCV人脸识别（从电脑摄像头获取图像）">
                         
-                        <span class="card-title">使用arduino输出QMC5883L的三轴磁场和YAW角</span>
+                        <span class="card-title">openCV人脸识别（从电脑摄像头获取图像）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -969,12 +994,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/arduino/">
-                        <span class="chip bg-color">arduino</span>
+                    <a href="/tags/openCV/">
+                        <span class="chip bg-color">openCV</span>
                     </a>
                     
-                    <a href="/tags/c-c/">
-                        <span class="chip bg-color">c/c++</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/pycharm/">
+                        <span class="chip bg-color">pycharm</span>
                     </a>
                     
                 </div>
@@ -988,12 +1017,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/bd55ecf0.html">
+                <a href="/posts/428be35.html">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/range_4.jpg" class="responsive-img" alt="上传图片">
+                        <img src="/medias/featureimages/starsky.jpg" class="responsive-img" alt="关于hexo 首页图片无法显示解决方法">
                         
-                        <span class="card-title">上传图片</span>
+                        <span class="card-title">关于hexo 首页图片无法显示解决方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1021,8 +1050,8 @@
                         <span class="chip bg-color">hexo</span>
                     </a>
                     
-                    <a href="/tags/picture/">
-                        <span class="chip bg-color">picture</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>

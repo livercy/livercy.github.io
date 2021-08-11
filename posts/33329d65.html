@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="关于hexo 首页图片无法显示解决方法, livercy&#39;s blog">
+    <meta name="keywords" content="openCV人脸识别（从电脑摄像头获取图像）, livercy&#39;s blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>关于hexo 首页图片无法显示解决方法 | livercy&#39;s blog</title>
+    <title>openCV人脸识别（从电脑摄像头获取图像） | livercy&#39;s blog</title>
     <link rel="icon" type="image/png" href="/cryo_blue.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -527,12 +527,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/starsky.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/flower.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">关于hexo 首页图片无法显示解决方法</h1>
+                    <h1 class="description center-align post-title">openCV人脸识别（从电脑摄像头获取图像）</h1>
                 </div>
             </div>
         </div>
@@ -648,12 +648,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
+                            <a href="/tags/openCV/">
+                                <span class="chip bg-color">openCV</span>
                             </a>
                         
-                            <a href="/tags/JavaScript/">
-                                <span class="chip bg-color">JavaScript</span>
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/pycharm/">
+                                <span class="chip bg-color">pycharm</span>
                             </a>
                         
                     </div>
@@ -668,7 +672,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-10
+                    2021-08-11
                 </div>
                 
 
@@ -689,12 +693,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="/images/pasted-6.png" alt="upload successful"></p>
-<p>有时Markdown可以显示图片，而上传hexo后无法显示图片，只要在Markdown的图片显示链接中将“\”修改为“/”，同时删除第一个和最后一个“\”</p>
-<p><img src="/images/pasted-3.png" alt="upload successful"></p>
-<p>修改为</p>
-<p><img src="/images/pasted-4.png" alt="upload successful"></p>
-<p>即可显示在hexo</p>
+                <p>openCV人脸识别（从电脑摄像头获取图像）</p>
+<h1 id="首先安装openCV-Python库"><a href="#首先安装openCV-Python库" class="headerlink" title="首先安装openCV-Python库"></a>首先安装openCV-Python库</h1><p>使用pycharm作为执行软件</p>
+<p><img src="/images/pasted-12.png"></p>
+<p><img src="/images/pasted-13.png"></p>
+<h1 id="Haar级联检测器"><a href="#Haar级联检测器" class="headerlink" title="Haar级联检测器"></a>Haar级联检测器</h1><p>找到OpenCV根目录下的data/haarcascades文件夹下包含了所有OpenCV的人脸检测的XML文件，这些文件可以用于检测静止图像、视频以及摄像头所得到的图像中的人脸。</p>
+<p><img src="/images/pasted-14.png"></p>
+<h1 id="我们先选择识别一张静态图像"><a href="#我们先选择识别一张静态图像" class="headerlink" title="我们先选择识别一张静态图像"></a>我们先选择识别一张静态图像</h1><p>识别的图像要保存至Haar级联检测器相同路径！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import cv2</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义图片</span></span><br><span class="line">filename = <span class="string">&#x27;D:/pycharm/my pycharm/venv/Lib/site-packages/cv2/data/c1.jpg&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#加载人脸检测相关的pre-trained分类器，级联检测器</span></span><br><span class="line">face_cascade = cv2.CascadeClassifier(<span class="string">&#x27;D:/pycharm/my pycharm/venv/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#读取图像</span></span><br><span class="line">img = cv2.imread(filename)</span><br><span class="line"></span><br><span class="line"><span class="comment">#转为灰度图片</span></span><br><span class="line">gray = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)</span><br><span class="line"></span><br><span class="line"><span class="comment">#人脸检测，第二个参数是移动距离，第三个参数是识别度，越大识别度越高</span></span><br><span class="line">faces = face_cascade.detectMultiScale(gray,1.05,10)</span><br><span class="line"></span><br><span class="line"><span class="comment">#画方框</span></span><br><span class="line"><span class="keyword">for</span> (x,y,w,h) <span class="keyword">in</span> faces:</span><br><span class="line">    cv2.rectangle(img,(x,y),(x+w,y+w),(0,255,0),2)</span><br><span class="line"></span><br><span class="line">cv2.namedWindow(<span class="string">&#x27;face&#x27;</span>,cv2.WINDOW_KEEPRATIO)<span class="comment">#图像框可以拉动</span></span><br><span class="line">cv2.imshow(<span class="string">&#x27;face&#x27;</span>,img)</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;face.jpg&#x27;</span>,img)</span><br><span class="line">cv2.waitKey(0)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/pasted-15.png"></p>
+<p>如果发现人脸没有被识别出来，可以根据情况调节detectMultiScale函数的第二个参数scaleFactor，它表示人脸检测过程中每次迭代时图像的压缩率。</p>
+<h1 id="再试试通过摄像头获取图像"><a href="#再试试通过摄像头获取图像" class="headerlink" title="再试试通过摄像头获取图像"></a>再试试通过摄像头获取图像</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">import cv2</span><br><span class="line"></span><br><span class="line"><span class="comment">#开启电脑0号摄像头，捕捉图像</span></span><br><span class="line"><span class="built_in">cap</span> = cv2.VideoCapture(0)</span><br><span class="line"><span class="comment">#从摄像头获取图像，第一个为布尔变量表示成功与否，第二个变量是图像</span></span><br><span class="line">ret,filename = cap.read()</span><br><span class="line"><span class="comment">#保存图像至Haar相同路径</span></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;D:/pycharm/my pycharm/venv/Lib/site-packages/cv2/data/c1.jpg&#x27;</span>,filename)</span><br><span class="line"></span><br><span class="line"><span class="comment">#释放摄像头资源</span></span><br><span class="line">cap.release()</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义图片</span></span><br><span class="line">filename = <span class="string">&#x27;D:/pycharm/my pycharm/venv/Lib/site-packages/cv2/data/c1.jpg&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#加载人脸检测相关的pre-trained分类器，级联检测器</span></span><br><span class="line">face_cascade = cv2.CascadeClassifier(<span class="string">&#x27;D:/pycharm/my pycharm/venv/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#读取图像</span></span><br><span class="line">img = cv2.imread(filename)</span><br><span class="line"></span><br><span class="line"><span class="comment">#转为灰度图片</span></span><br><span class="line">gray = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)</span><br><span class="line"></span><br><span class="line"><span class="comment">#人脸检测，第二个参数是移动距离，第三个参数是识别度，越大识别度越高</span></span><br><span class="line">faces = face_cascade.detectMultiScale(gray,1.05,10)</span><br><span class="line"></span><br><span class="line"><span class="comment">#画方框</span></span><br><span class="line"><span class="keyword">for</span> (x,y,w,h) <span class="keyword">in</span> faces:</span><br><span class="line">    cv2.rectangle(img,(x,y),(x+w,y+w),(0,255,0),2)</span><br><span class="line"></span><br><span class="line">cv2.namedWindow(<span class="string">&#x27;face&#x27;</span>,cv2.WINDOW_KEEPRATIO)<span class="comment">#图像框可以拉动</span></span><br><span class="line">cv2.imshow(<span class="string">&#x27;face&#x27;</span>,img)</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;face.jpg&#x27;</span>,img)</span><br><span class="line">cv2.waitKey(0)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+<p>其会通过摄像头拍摄一张照片，存放到本地，并调用其进行识别，结果将会显示出来。</p>
 
                 
             </div>
@@ -721,7 +733,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://livercy.top/posts/428be35.html">http://livercy.top/posts/428be35.html</a>
+                    <a href="http://livercy.top/posts/33329d65.html">http://livercy.top/posts/33329d65.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -759,12 +771,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
+                                <a href="/tags/openCV/">
+                                    <span class="chip bg-color">openCV</span>
                                 </a>
                             
-                                <a href="/tags/JavaScript/">
-                                    <span class="chip bg-color">JavaScript</span>
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/pycharm/">
+                                    <span class="chip bg-color">pycharm</span>
                                 </a>
                             
                         </div>
@@ -936,9 +952,63 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/33329d65.html">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/flower.jpg" class="responsive-img" alt="openCV人脸识别（从电脑摄像头获取图像）">
+                        
+                        <span class="card-title">openCV人脸识别（从电脑摄像头获取图像）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            livercy
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/openCV/">
+                        <span class="chip bg-color">openCV</span>
+                    </a>
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/pycharm/">
+                        <span class="chip bg-color">pycharm</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/posts/a012d6f7.html">
                     <div class="card-image">
@@ -955,9 +1025,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -975,54 +1045,6 @@
                     
                     <a href="/tags/c-c/">
                         <span class="chip bg-color">c/c++</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/bd55ecf0.html">
-                    <div class="card-image">
-                        
-                        <img src="/medias/featureimages/range_4.jpg" class="responsive-img" alt="上传图片">
-                        
-                        <span class="card-title">上传图片</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-10
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            livercy
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
-                    <a href="/tags/picture/">
-                        <span class="chip bg-color">picture</span>
                     </a>
                     
                 </div>
