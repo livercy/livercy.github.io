@@ -19,6 +19,13 @@
 ]]></content>
   </entry>
   <entry>
+    <title>上传图片</title>
+    <url>/posts/bd55ecf0.html</url>
+    <content><![CDATA[<p>试用Mardown上传图片</p>
+<p><img src="/images/pasted-0.png" alt="upload successful"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>关于hexo 首页图片无法显示解决方法</title>
     <url>/posts/428be35.html</url>
     <content><![CDATA[<p><img src="/images/pasted-6.png" alt="upload successful"></p>
@@ -27,13 +34,6 @@
 <p>修改为</p>
 <p><img src="/images/pasted-4.png" alt="upload successful"></p>
 <p>即可显示在hexo</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>上传图片</title>
-    <url>/posts/bd55ecf0.html</url>
-    <content><![CDATA[<p>试用Mardown上传图片</p>
-<p><img src="/images/pasted-0.png" alt="upload successful"></p>
 ]]></content>
   </entry>
 </search>
