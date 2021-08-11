@@ -1,37 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Python遍历字典中的键值对</title>
-    <url>/posts/1b9a95c3.html</url>
-    <content><![CDATA[<p>Python为字典类型提供了items()方法，items()方法会将字典里的所有的键与值一起返回。</p>
-<p>例如，餐馆有一个菜单包含了菜名和价格信息。菜名和价格顾客都需要知道，可以通过遍历输出menu字典的键和值来实现。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#coding = utf-8</span></span><br><span class="line"><span class="comment"># 创建并初始化menu菜单字典</span></span><br><span class="line">menu=&#123;<span class="string">&#x27;fish&#x27;</span>:<span class="string">&#x27;40&#x27;</span>,<span class="string">&#x27;pork&#x27;</span>:<span class="string">&#x27;30&#x27;</span>,<span class="string">&#x27;potato&#x27;</span>:<span class="string">&#x27;20&#x27;</span>,<span class="string">&#x27;lamb&#x27;</span>:<span class="string">&#x27;50&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 利用items()方法遍历输出键和值</span></span><br><span class="line"><span class="keyword">for</span> key,value <span class="keyword">in</span> menu.items():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;\nkey:&#x27;</span>+key)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;value:&#x27;</span>+value)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">key:fish</span><br><span class="line">value:40</span><br><span class="line">key:pork</span><br><span class="line">value:30</span><br><span class="line">key:potato</span><br><span class="line">value:20</span><br><span class="line">key:lamb</span><br><span class="line">value:50</span><br></pre></td></tr></table></figure>
-
-<p>输出结果表示，items()方法每次都将对应的键和值指定到key和value变量中，然后用for循环输出。</p>
-]]></content>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PAT：1002写出这个数</title>
-    <url>/posts/72d8caaa.html</url>
-    <content><![CDATA[<p>读入一个正整数 n，计算其各位数字之和，用汉语拼音写出和的每一位数字。</p>
-<p>输入格式：<br>每个测试输入包含 1 个测试用例，即给出自然数 n 的值。这里保证 n 小于 10​100​​。</p>
-<p>输出格式：<br>在一行内输出 n 的各位数字之和的每一位，拼音数字间有 1 空格，但一行中最后一个拼音数字后没有空格。</p>
-<p>输入样例：</p>
-<p>1234567890987654321123456789</p>
-<p>输出样例：</p>
-<p>yi san wu</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#include&lt;string.h&gt;</span></span><br><span class="line"><span class="comment">#include&lt;stdio.h&gt;</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">char change[15][5] = &#123;<span class="string">&quot;ling&quot;</span>,<span class="string">&quot;yi&quot;</span>,<span class="string">&quot;er&quot;</span>,<span class="string">&quot;san&quot;</span>,<span class="string">&quot;si&quot;</span>,<span class="string">&quot;wu&quot;</span>,<span class="string">&quot;liu&quot;</span>,<span class="string">&quot;qi&quot;</span>,<span class="string">&quot;ba&quot;</span>,<span class="string">&quot;jiu&quot;</span>,<span class="string">&quot;shi&quot;</span>&#125;;</span><br><span class="line">char num [110];</span><br><span class="line"><span class="keyword">if</span>(scanf(<span class="string">&quot;%s&quot;</span>,num))&#123;&#125;;</span><br><span class="line">int len = strlen(num);</span><br><span class="line">int sum = 0;</span><br><span class="line"><span class="keyword">for</span>(int i = 0; i &lt; len; i++)sum += num[i] - <span class="string">&#x27;0&#x27;</span>; //若不加 - ‘0’，则是每个数字对应的ASCII码在相加 </span><br><span class="line"></span><br><span class="line">int digit[1000],i = 0;</span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">	digit[i++] = sum%10;</span><br><span class="line">	sum /= 10;</span><br><span class="line">&#125;<span class="keyword">while</span>(sum&gt;0);</span><br><span class="line"><span class="keyword">while</span>(i--)&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,change[digit[i]]);</span><br><span class="line">	<span class="keyword">if</span>(i != 0)<span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>PAT</tag>
-        <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>二维数组井字棋</title>
     <url>/posts/3f2eafc3.html</url>
     <content><![CDATA[<h1 id="tic-tac-toe游戏"><a href="#tic-tac-toe游戏" class="headerlink" title="tic-tac-toe游戏"></a>tic-tac-toe游戏</h1><p>  读入一个3×3矩阵，矩阵中的数字为1表示该位置上有一个X，为0表示该位置上有一个O，要求编写程序判断这个矩阵中是否有获胜的一方，输出表示获胜一方的字符X或O，或输出无人获胜。
@@ -63,9 +32,40 @@
 <p>其会通过摄像头拍摄一张照片，存放到本地，并调用其进行识别，结果将会显示出来。</p>
 ]]></content>
       <tags>
-        <tag>python</tag>
         <tag>openCV</tag>
+        <tag>python</tag>
         <tag>pycharm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PAT：1002写出这个数</title>
+    <url>/posts/72d8caaa.html</url>
+    <content><![CDATA[<p>读入一个正整数 n，计算其各位数字之和，用汉语拼音写出和的每一位数字。</p>
+<p>输入格式：<br>每个测试输入包含 1 个测试用例，即给出自然数 n 的值。这里保证 n 小于 10​100​​。</p>
+<p>输出格式：<br>在一行内输出 n 的各位数字之和的每一位，拼音数字间有 1 空格，但一行中最后一个拼音数字后没有空格。</p>
+<p>输入样例：</p>
+<p>1234567890987654321123456789</p>
+<p>输出样例：</p>
+<p>yi san wu</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#include&lt;string.h&gt;</span></span><br><span class="line"><span class="comment">#include&lt;stdio.h&gt;</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">char change[15][5] = &#123;<span class="string">&quot;ling&quot;</span>,<span class="string">&quot;yi&quot;</span>,<span class="string">&quot;er&quot;</span>,<span class="string">&quot;san&quot;</span>,<span class="string">&quot;si&quot;</span>,<span class="string">&quot;wu&quot;</span>,<span class="string">&quot;liu&quot;</span>,<span class="string">&quot;qi&quot;</span>,<span class="string">&quot;ba&quot;</span>,<span class="string">&quot;jiu&quot;</span>,<span class="string">&quot;shi&quot;</span>&#125;;</span><br><span class="line">char num [110];</span><br><span class="line"><span class="keyword">if</span>(scanf(<span class="string">&quot;%s&quot;</span>,num))&#123;&#125;;</span><br><span class="line">int len = strlen(num);</span><br><span class="line">int sum = 0;</span><br><span class="line"><span class="keyword">for</span>(int i = 0; i &lt; len; i++)sum += num[i] - <span class="string">&#x27;0&#x27;</span>; //若不加 - ‘0’，则是每个数字对应的ASCII码在相加 </span><br><span class="line"></span><br><span class="line">int digit[1000],i = 0;</span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">	digit[i++] = sum%10;</span><br><span class="line">	sum /= 10;</span><br><span class="line">&#125;<span class="keyword">while</span>(sum&gt;0);</span><br><span class="line"><span class="keyword">while</span>(i--)&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,change[digit[i]]);</span><br><span class="line">	<span class="keyword">if</span>(i != 0)<span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>C</tag>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python遍历字典中的键值对</title>
+    <url>/posts/1b9a95c3.html</url>
+    <content><![CDATA[<p>Python为字典类型提供了items()方法，items()方法会将字典里的所有的键与值一起返回。</p>
+<p>例如，餐馆有一个菜单包含了菜名和价格信息。菜名和价格顾客都需要知道，可以通过遍历输出menu字典的键和值来实现。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#coding = utf-8</span></span><br><span class="line"><span class="comment"># 创建并初始化menu菜单字典</span></span><br><span class="line">menu=&#123;<span class="string">&#x27;fish&#x27;</span>:<span class="string">&#x27;40&#x27;</span>,<span class="string">&#x27;pork&#x27;</span>:<span class="string">&#x27;30&#x27;</span>,<span class="string">&#x27;potato&#x27;</span>:<span class="string">&#x27;20&#x27;</span>,<span class="string">&#x27;lamb&#x27;</span>:<span class="string">&#x27;50&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 利用items()方法遍历输出键和值</span></span><br><span class="line"><span class="keyword">for</span> key,value <span class="keyword">in</span> menu.items():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;\nkey:&#x27;</span>+key)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;value:&#x27;</span>+value)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">key:fish</span><br><span class="line">value:40</span><br><span class="line">key:pork</span><br><span class="line">value:30</span><br><span class="line">key:potato</span><br><span class="line">value:20</span><br><span class="line">key:lamb</span><br><span class="line">value:50</span><br></pre></td></tr></table></figure>
+
+<p>输出结果表示，items()方法每次都将对应的键和值指定到key和value变量中，然后用for循环输出。</p>
+]]></content>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -81,6 +81,17 @@
       <tags>
         <tag>hexo</tag>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>上传图片</title>
+    <url>/posts/bd55ecf0.html</url>
+    <content><![CDATA[<p>试用Mardown上传图片</p>
+<p><img src="/images/pasted-0.png" alt="upload successful"></p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>picture</tag>
       </tags>
   </entry>
   <entry>
@@ -121,17 +132,6 @@
       <tags>
         <tag>arduino</tag>
         <tag>c/c++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>上传图片</title>
-    <url>/posts/bd55ecf0.html</url>
-    <content><![CDATA[<p>试用Mardown上传图片</p>
-<p><img src="/images/pasted-0.png" alt="upload successful"></p>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-        <tag>picture</tag>
       </tags>
   </entry>
 </search>
