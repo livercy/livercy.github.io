@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>PAT：1002写出这个数</title>
+    <url>/posts/72d8caaa.html</url>
+    <content><![CDATA[<p>读入一个正整数 n，计算其各位数字之和，用汉语拼音写出和的每一位数字。</p>
+<p>输入格式：<br>每个测试输入包含 1 个测试用例，即给出自然数 n 的值。这里保证 n 小于 10​100​​。</p>
+<p>输出格式：<br>在一行内输出 n 的各位数字之和的每一位，拼音数字间有 1 空格，但一行中最后一个拼音数字后没有空格。</p>
+<p>输入样例：</p>
+<p>1234567890987654321123456789</p>
+<p>输出样例：</p>
+<p>yi san wu</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#include&lt;string.h&gt;</span></span><br><span class="line"><span class="comment">#include&lt;stdio.h&gt;</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">char change[15][5] = &#123;<span class="string">&quot;ling&quot;</span>,<span class="string">&quot;yi&quot;</span>,<span class="string">&quot;er&quot;</span>,<span class="string">&quot;san&quot;</span>,<span class="string">&quot;si&quot;</span>,<span class="string">&quot;wu&quot;</span>,<span class="string">&quot;liu&quot;</span>,<span class="string">&quot;qi&quot;</span>,<span class="string">&quot;ba&quot;</span>,<span class="string">&quot;jiu&quot;</span>,<span class="string">&quot;shi&quot;</span>&#125;;</span><br><span class="line">char num [110];</span><br><span class="line"><span class="keyword">if</span>(scanf(<span class="string">&quot;%s&quot;</span>,num))&#123;&#125;;</span><br><span class="line">int len = strlen(num);</span><br><span class="line">int sum = 0;</span><br><span class="line"><span class="keyword">for</span>(int i = 0; i &lt; len; i++)sum += num[i] - <span class="string">&#x27;0&#x27;</span>; //若不加 - ‘0’，则是每个数字对应的ASCII码在相加 </span><br><span class="line"></span><br><span class="line">int digit[1000],i = 0;</span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">	digit[i++] = sum%10;</span><br><span class="line">	sum /= 10;</span><br><span class="line">&#125;<span class="keyword">while</span>(sum&gt;0);</span><br><span class="line"><span class="keyword">while</span>(i--)&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,change[digit[i]]);</span><br><span class="line">	<span class="keyword">if</span>(i != 0)<span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>PAT</tag>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python在列表尾部添加元素</title>
     <url>/posts/9f04727b.html</url>
     <content><![CDATA[<p>在列表尾部添加元素<br>在Python中，可以使用append()方法向一个列表的尾部追加一个元素，其基本语法如下：</p>
@@ -23,24 +41,6 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建并初始化guests列表</span></span><br><span class="line">guests=[<span class="string">&#x27;Zhang san&#x27;</span>,<span class="string">&#x27;Li si&#x27;</span>,<span class="string">&#x27;Wang wu&#x27;</span>,<span class="string">&#x27;Zhao liu&#x27;</span>]</span><br><span class="line"><span class="comment"># 向guests列表Zhang san后面增加一个名为Hu qi的客人</span></span><br><span class="line">guests.insert(1,<span class="string">&#x27;Hu qi&#x27;</span>)</span><br><span class="line"><span class="comment"># 输出新的guests列表</span></span><br><span class="line"><span class="built_in">print</span>(guests)</span><br><span class="line"></span><br><span class="line">输出结果为： [<span class="string">&#x27;Zhang san&#x27;</span>,<span class="string">&#x27;Hu qi&#x27;</span>,<span class="string">&#x27;Li si&#x27;</span>,<span class="string">&#x27;Wang wu&#x27;</span>,<span class="string">&#x27;Zhao liu&#x27;</span>]</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PAT：1002写出这个数</title>
-    <url>/posts/72d8caaa.html</url>
-    <content><![CDATA[<p>读入一个正整数 n，计算其各位数字之和，用汉语拼音写出和的每一位数字。</p>
-<p>输入格式：<br>每个测试输入包含 1 个测试用例，即给出自然数 n 的值。这里保证 n 小于 10​100​​。</p>
-<p>输出格式：<br>在一行内输出 n 的各位数字之和的每一位，拼音数字间有 1 空格，但一行中最后一个拼音数字后没有空格。</p>
-<p>输入样例：</p>
-<p>1234567890987654321123456789</p>
-<p>输出样例：</p>
-<p>yi san wu</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#include&lt;string.h&gt;</span></span><br><span class="line"><span class="comment">#include&lt;stdio.h&gt;</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">char change[15][5] = &#123;<span class="string">&quot;ling&quot;</span>,<span class="string">&quot;yi&quot;</span>,<span class="string">&quot;er&quot;</span>,<span class="string">&quot;san&quot;</span>,<span class="string">&quot;si&quot;</span>,<span class="string">&quot;wu&quot;</span>,<span class="string">&quot;liu&quot;</span>,<span class="string">&quot;qi&quot;</span>,<span class="string">&quot;ba&quot;</span>,<span class="string">&quot;jiu&quot;</span>,<span class="string">&quot;shi&quot;</span>&#125;;</span><br><span class="line">char num [110];</span><br><span class="line"><span class="keyword">if</span>(scanf(<span class="string">&quot;%s&quot;</span>,num))&#123;&#125;;</span><br><span class="line">int len = strlen(num);</span><br><span class="line">int sum = 0;</span><br><span class="line"><span class="keyword">for</span>(int i = 0; i &lt; len; i++)sum += num[i] - <span class="string">&#x27;0&#x27;</span>; //若不加 - ‘0’，则是每个数字对应的ASCII码在相加 </span><br><span class="line"></span><br><span class="line">int digit[1000],i = 0;</span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">	digit[i++] = sum%10;</span><br><span class="line">	sum /= 10;</span><br><span class="line">&#125;<span class="keyword">while</span>(sum&gt;0);</span><br><span class="line"><span class="keyword">while</span>(i--)&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,change[digit[i]]);</span><br><span class="line">	<span class="keyword">if</span>(i != 0)<span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>PAT</tag>
-        <tag>C</tag>
       </tags>
   </entry>
   <entry>
@@ -156,18 +156,14 @@
       </tags>
   </entry>
   <entry>
-    <title>关于hexo 首页图片无法显示解决方法</title>
-    <url>/posts/428be35.html</url>
-    <content><![CDATA[<p><img src="/images/pasted-6.png" alt="upload successful"></p>
-<p>有时Markdown可以显示图片，而上传hexo后无法显示图片，只要在Markdown的图片显示链接中将“\”修改为“/”，同时删除第一个和最后一个“\”</p>
-<p><img src="/images/pasted-3.png" alt="upload successful"></p>
-<p>修改为</p>
-<p><img src="/images/pasted-4.png" alt="upload successful"></p>
-<p>即可显示在hexo</p>
+    <title>上传图片</title>
+    <url>/posts/bd55ecf0.html</url>
+    <content><![CDATA[<p>试用Mardown上传图片，测试上传图片的性能和速度，属性Markdown上传图片的嵌入链接规则。</p>
+<p><img src="/images/pasted-0.png"></p>
 ]]></content>
       <tags>
-        <tag>JavaScript</tag>
         <tag>hexo</tag>
+        <tag>picture</tag>
       </tags>
   </entry>
   <entry>
@@ -187,14 +183,18 @@
       </tags>
   </entry>
   <entry>
-    <title>上传图片</title>
-    <url>/posts/bd55ecf0.html</url>
-    <content><![CDATA[<p>试用Mardown上传图片，测试上传图片的性能和速度，属性Markdown上传图片的嵌入链接规则。</p>
-<p><img src="/images/pasted-0.png"></p>
+    <title>关于hexo 首页图片无法显示解决方法</title>
+    <url>/posts/428be35.html</url>
+    <content><![CDATA[<p><img src="/images/pasted-6.png" alt="upload successful"></p>
+<p>有时Markdown可以显示图片，而上传hexo后无法显示图片，只要在Markdown的图片显示链接中将“\”修改为“/”，同时删除第一个和最后一个“\”</p>
+<p><img src="/images/pasted-3.png" alt="upload successful"></p>
+<p>修改为</p>
+<p><img src="/images/pasted-4.png" alt="upload successful"></p>
+<p>即可显示在hexo</p>
 ]]></content>
       <tags>
+        <tag>JavaScript</tag>
         <tag>hexo</tag>
-        <tag>picture</tag>
       </tags>
   </entry>
 </search>
