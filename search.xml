@@ -19,18 +19,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Python在列表指定位置添加元素</title>
-    <url>/posts/d5152ecc.html</url>
-    <content><![CDATA[<p>在列表指定位置添加元素</p>
-<p>Python也提供了insert()方法，可以在列表任意指定位置插入元素，其基本语法为：</p>
-<p>source_list.insert(index,obj)其中，source_list：为待修改的列表<br>index：为待插入的位置索引<br>obj：为待插入的元素</p>
-<p>注意：在Python中，列表起始元素的位置索引为0例如，要向guests列表中Zhang san的后面增加客人Hu qi，则相应的语句为：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建并初始化guests列表</span></span><br><span class="line">guests=[<span class="string">&#x27;Zhang san&#x27;</span>,<span class="string">&#x27;Li si&#x27;</span>,<span class="string">&#x27;Wang wu&#x27;</span>,<span class="string">&#x27;Zhao liu&#x27;</span>]</span><br><span class="line"><span class="comment"># 向guests列表Zhang san后面增加一个名为Hu qi的客人</span></span><br><span class="line">guests.insert(1,<span class="string">&#x27;Hu qi&#x27;</span>)</span><br><span class="line"><span class="comment"># 输出新的guests列表</span></span><br><span class="line"><span class="built_in">print</span>(guests)</span><br><span class="line"></span><br><span class="line">输出结果为： [<span class="string">&#x27;Zhang san&#x27;</span>,<span class="string">&#x27;Hu qi&#x27;</span>,<span class="string">&#x27;Li si&#x27;</span>,<span class="string">&#x27;Wang wu&#x27;</span>,<span class="string">&#x27;Zhao liu&#x27;</span>]</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python在列表尾部添加元素</title>
     <url>/posts/9f04727b.html</url>
     <content><![CDATA[<p>在列表尾部添加元素<br>在Python中，可以使用append()方法向一个列表的尾部追加一个元素，其基本语法如下：</p>
@@ -81,18 +69,15 @@
       </tags>
   </entry>
   <entry>
-    <title>关于hexo 首页图片无法显示解决方法</title>
-    <url>/posts/428be35.html</url>
-    <content><![CDATA[<p><img src="/images/pasted-6.png" alt="upload successful"></p>
-<p>有时Markdown可以显示图片，而上传hexo后无法显示图片，只要在Markdown的图片显示链接中将“\”修改为“/”，同时删除第一个和最后一个“\”</p>
-<p><img src="/images/pasted-3.png" alt="upload successful"></p>
-<p>修改为</p>
-<p><img src="/images/pasted-4.png" alt="upload successful"></p>
-<p>即可显示在hexo</p>
-]]></content>
+    <title>Python在列表指定位置添加元素</title>
+    <url>/posts/d5152ecc.html</url>
+    <content><![CDATA[<p>在列表指定位置添加元素</p>
+<p>Python也提供了insert()方法，可以在列表任意指定位置插入元素，其基本语法为：</p>
+<p>source_list.insert(index,obj)其中，source_list：为待修改的列表<br>index：为待插入的位置索引<br>obj：为待插入的元素</p>
+<p>注意：在Python中，列表起始元素的位置索引为0例如，要向guests列表中Zhang san的后面增加客人Hu qi，则相应的语句为：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建并初始化guests列表</span></span><br><span class="line">guests=[<span class="string">&#x27;Zhang san&#x27;</span>,<span class="string">&#x27;Li si&#x27;</span>,<span class="string">&#x27;Wang wu&#x27;</span>,<span class="string">&#x27;Zhao liu&#x27;</span>]</span><br><span class="line"><span class="comment"># 向guests列表Zhang san后面增加一个名为Hu qi的客人</span></span><br><span class="line">guests.insert(1,<span class="string">&#x27;Hu qi&#x27;</span>)</span><br><span class="line"><span class="comment"># 输出新的guests列表</span></span><br><span class="line"><span class="built_in">print</span>(guests)</span><br><span class="line"></span><br><span class="line">输出结果为： [<span class="string">&#x27;Zhang san&#x27;</span>,<span class="string">&#x27;Hu qi&#x27;</span>,<span class="string">&#x27;Li si&#x27;</span>,<span class="string">&#x27;Wang wu&#x27;</span>,<span class="string">&#x27;Zhao liu&#x27;</span>]</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>hexo</tag>
-        <tag>JavaScript</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -149,6 +134,37 @@
       </tags>
   </entry>
   <entry>
+    <title>关于hexo 首页图片无法显示解决方法</title>
+    <url>/posts/428be35.html</url>
+    <content><![CDATA[<p><img src="/images/pasted-6.png" alt="upload successful"></p>
+<p>有时Markdown可以显示图片，而上传hexo后无法显示图片，只要在Markdown的图片显示链接中将“\”修改为“/”，同时删除第一个和最后一个“\”</p>
+<p><img src="/images/pasted-3.png" alt="upload successful"></p>
+<p>修改为</p>
+<p><img src="/images/pasted-4.png" alt="upload successful"></p>
+<p>即可显示在hexo</p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信小程序苹果机型iOS连接蓝牙失败解决方法（wx.getBLEDeviceCharacteristics）</title>
+    <url>/posts/8ece9ac1.html</url>
+    <content><![CDATA[<p>iOS在进行wx.getBLEDeviceCharacteristics获得特征值时，serviceId对应的uuid必须为大写才可以，否则抛出错误。</p>
+<p>我使用的uuid是（小写）：显示fail</p>
+<p><img src="/images/pasted-16.png" alt="fail"></p>
+<p>修改后的uuid（大写）：正常连接</p>
+<p><img src="/images/pasted-17.png" alt="successful"></p>
+]]></content>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>Java</tag>
+        <tag>IOS</tag>
+        <tag>android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>微信小程序不同组件view，text并排显示横行方法</title>
     <url>/posts/38c6db37.html</url>
     <content><![CDATA[<p>不同组件并排显示，需要放置在一个view</p>
@@ -179,22 +195,6 @@
       <tags>
         <tag>hexo</tag>
         <tag>picture</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微信小程序苹果机型iOS连接蓝牙失败解决方法（wx.getBLEDeviceCharacteristics）</title>
-    <url>/posts/8ece9ac1.html</url>
-    <content><![CDATA[<p>iOS在进行wx.getBLEDeviceCharacteristics获得特征值时，serviceId对应的uuid必须为大写才可以，否则抛出错误。</p>
-<p>我使用的uuid是（小写）：显示fail</p>
-<p><img src="/images/pasted-16.png" alt="fail"></p>
-<p>修改后的uuid（大写）：正常连接</p>
-<p><img src="/images/pasted-17.png" alt="successful"></p>
-]]></content>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>Java</tag>
-        <tag>IOS</tag>
-        <tag>android</tag>
       </tags>
   </entry>
 </search>
