@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Python在列表尾部添加元素</title>
+    <url>/posts/9f04727b.html</url>
+    <content><![CDATA[<p>在列表尾部添加元素<br>在Python中，可以使用append()方法向一个列表的尾部追加一个元素，其基本语法如下：</p>
+<p>source_list.append(obj)</p>
+<p>其中，</p>
+<p>source_list：为待修改的列表<br>obj：为待插入的元素</p>
+<p>例如，要向guests列表尾部增加客人Hu qi，相应的语句为：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 初始化guests列表</span></span><br><span class="line">guests=[<span class="string">&#x27;Zhang san&#x27;</span>,<span class="string">&#x27;Li si&#x27;</span>,<span class="string">&#x27;Wang wu&#x27;</span>,<span class="string">&#x27;Zhao liu&#x27;</span>]</span><br><span class="line"><span class="comment"># 向guests列表尾部追加一个名为Hu qi的客人</span></span><br><span class="line">guests.append(<span class="string">&#x27;Hu qi&#x27;</span>)</span><br><span class="line"><span class="comment"># 输出新的guests列表</span></span><br><span class="line"><span class="built_in">print</span>(guests)</span><br><span class="line"></span><br><span class="line">输出结果为： [<span class="string">&#x27;Zhang san&#x27;</span>,<span class="string">&#x27;Li si&#x27;</span>,<span class="string">&#x27;Wang wu&#x27;</span>,<span class="string">&#x27;Zhao liu&#x27;</span>,<span class="string">&#x27;Hu qi&#x27;</span>]</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python遍历字典中的键值对</title>
+    <url>/posts/1b9a95c3.html</url>
+    <content><![CDATA[<p>Python为字典类型提供了items()方法，items()方法会将字典里的所有的键与值一起返回。</p>
+<p>例如，餐馆有一个菜单包含了菜名和价格信息。菜名和价格顾客都需要知道，可以通过遍历输出menu字典的键和值来实现。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#coding = utf-8</span></span><br><span class="line"><span class="comment"># 创建并初始化menu菜单字典</span></span><br><span class="line">menu=&#123;<span class="string">&#x27;fish&#x27;</span>:<span class="string">&#x27;40&#x27;</span>,<span class="string">&#x27;pork&#x27;</span>:<span class="string">&#x27;30&#x27;</span>,<span class="string">&#x27;potato&#x27;</span>:<span class="string">&#x27;20&#x27;</span>,<span class="string">&#x27;lamb&#x27;</span>:<span class="string">&#x27;50&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 利用items()方法遍历输出键和值</span></span><br><span class="line"><span class="keyword">for</span> key,value <span class="keyword">in</span> menu.items():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;\nkey:&#x27;</span>+key)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;value:&#x27;</span>+value)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">key:fish</span><br><span class="line">value:40</span><br><span class="line">key:pork</span><br><span class="line">value:30</span><br><span class="line">key:potato</span><br><span class="line">value:20</span><br><span class="line">key:lamb</span><br><span class="line">value:50</span><br></pre></td></tr></table></figure>
+
+<p>输出结果表示，items()方法每次都将对应的键和值指定到key和value变量中，然后用for循环输出。</p>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PAT：1002写出这个数</title>
     <url>/posts/72d8caaa.html</url>
     <content><![CDATA[<p>读入一个正整数 n，计算其各位数字之和，用汉语拼音写出和的每一位数字。</p>
@@ -19,19 +45,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Python在列表尾部添加元素</title>
-    <url>/posts/9f04727b.html</url>
-    <content><![CDATA[<p>在列表尾部添加元素<br>在Python中，可以使用append()方法向一个列表的尾部追加一个元素，其基本语法如下：</p>
-<p>source_list.append(obj)</p>
-<p>其中，</p>
-<p>source_list：为待修改的列表<br>obj：为待插入的元素</p>
-<p>例如，要向guests列表尾部增加客人Hu qi，相应的语句为：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 初始化guests列表</span></span><br><span class="line">guests=[<span class="string">&#x27;Zhang san&#x27;</span>,<span class="string">&#x27;Li si&#x27;</span>,<span class="string">&#x27;Wang wu&#x27;</span>,<span class="string">&#x27;Zhao liu&#x27;</span>]</span><br><span class="line"><span class="comment"># 向guests列表尾部追加一个名为Hu qi的客人</span></span><br><span class="line">guests.append(<span class="string">&#x27;Hu qi&#x27;</span>)</span><br><span class="line"><span class="comment"># 输出新的guests列表</span></span><br><span class="line"><span class="built_in">print</span>(guests)</span><br><span class="line"></span><br><span class="line">输出结果为： [<span class="string">&#x27;Zhang san&#x27;</span>,<span class="string">&#x27;Li si&#x27;</span>,<span class="string">&#x27;Wang wu&#x27;</span>,<span class="string">&#x27;Zhao liu&#x27;</span>,<span class="string">&#x27;Hu qi&#x27;</span>]</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python在列表指定位置添加元素</title>
     <url>/posts/d5152ecc.html</url>
     <content><![CDATA[<p>在列表指定位置添加元素</p>
@@ -44,16 +57,16 @@
       </tags>
   </entry>
   <entry>
-    <title>Python遍历字典中的键值对</title>
-    <url>/posts/1b9a95c3.html</url>
-    <content><![CDATA[<p>Python为字典类型提供了items()方法，items()方法会将字典里的所有的键与值一起返回。</p>
-<p>例如，餐馆有一个菜单包含了菜名和价格信息。菜名和价格顾客都需要知道，可以通过遍历输出menu字典的键和值来实现。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#coding = utf-8</span></span><br><span class="line"><span class="comment"># 创建并初始化menu菜单字典</span></span><br><span class="line">menu=&#123;<span class="string">&#x27;fish&#x27;</span>:<span class="string">&#x27;40&#x27;</span>,<span class="string">&#x27;pork&#x27;</span>:<span class="string">&#x27;30&#x27;</span>,<span class="string">&#x27;potato&#x27;</span>:<span class="string">&#x27;20&#x27;</span>,<span class="string">&#x27;lamb&#x27;</span>:<span class="string">&#x27;50&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 利用items()方法遍历输出键和值</span></span><br><span class="line"><span class="keyword">for</span> key,value <span class="keyword">in</span> menu.items():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;\nkey:&#x27;</span>+key)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;value:&#x27;</span>+value)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">key:fish</span><br><span class="line">value:40</span><br><span class="line">key:pork</span><br><span class="line">value:30</span><br><span class="line">key:potato</span><br><span class="line">value:20</span><br><span class="line">key:lamb</span><br><span class="line">value:50</span><br></pre></td></tr></table></figure>
-
-<p>输出结果表示，items()方法每次都将对应的键和值指定到key和value变量中，然后用for循环输出。</p>
+    <title>二维数组井字棋</title>
+    <url>/posts/3f2eafc3.html</url>
+    <content><![CDATA[<h1 id="tic-tac-toe游戏"><a href="#tic-tac-toe游戏" class="headerlink" title="tic-tac-toe游戏"></a>tic-tac-toe游戏</h1><p>  读入一个3×3矩阵，矩阵中的数字为1表示该位置上有一个X，为0表示该位置上有一个O，要求编写程序判断这个矩阵中是否有获胜的一方，输出表示获胜一方的字符X或O，或输出无人获胜。
+  </p>
+<p> 本游戏获胜是指在同一行、同一列或同一对角线上，有三个相同字符。</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"> <span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">	//定义变量 </span><br><span class="line">	const int size = 3;</span><br><span class="line">	int board[size][size];</span><br><span class="line">	int i, j;</span><br><span class="line">	int numofXr, numofOr;  //numofXr表示同一行row中X的个数， numofOr表示同一行中O的个数</span><br><span class="line">	int numofXc, numofOc;  //numofXc表示同一列column中X的个数， numofOc示同一列中O的个数</span><br><span class="line">	int numofXd1, numofOd1, numofXd2, numofOd2;  //numofXd表示对角线diagonal上X的个数， numofOd表示对角线上O的个数，d1表示主对角线，d2表示次对角线 </span><br><span class="line">	int result = -1;  // -1表示没人赢，1表示X赢，0表示O赢</span><br><span class="line">	</span><br><span class="line">		</span><br><span class="line">	//读入矩阵</span><br><span class="line">	<span class="keyword">for</span> (i=0; i&lt;size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (j=0; j&lt;size; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			scanf(<span class="string">&quot;%d&quot;</span>, &amp;board[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	//判断行和列 </span><br><span class="line">	<span class="keyword">for</span> (i=0; i&lt;size &amp;&amp; result==-1; i++) </span><br><span class="line">	&#123;</span><br><span class="line">		numofXr =  numofOr = numofXc = numofOc = 0;</span><br><span class="line">		<span class="keyword">for</span> (j=0; j&lt;size; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			//判断行</span><br><span class="line">			<span class="keyword">if</span> (board[i][j] == 1)</span><br><span class="line">			&#123;</span><br><span class="line">				numofXr++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				numofOr++;</span><br><span class="line">			&#125;</span><br><span class="line">			//判断列</span><br><span class="line">			<span class="keyword">if</span> (board[j][i] == 1)</span><br><span class="line">			&#123;</span><br><span class="line">				numofXc++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				numofOc++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (numofXr == size || numofXc == size)</span><br><span class="line">		&#123;</span><br><span class="line">			result = 1;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (numofOr == size || numofOc == size)</span><br><span class="line">		&#123;</span><br><span class="line">			result = 0;</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	//判断对角线 </span><br><span class="line">	numofXd1 = numofOd1 = numofXd2 = numofOd2 = 0;  //此处初始化值需要在循环外面，而在判断行与列时初始化在循环里面，注意区分。 </span><br><span class="line">	<span class="keyword">for</span> (i=0; i&lt;size &amp;&amp; result==-1; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (board[i][i] == 1)</span><br><span class="line">		&#123;</span><br><span class="line">			numofXd1++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			numofOd1++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (board[i][size-i-1] == 1)</span><br><span class="line">		&#123;</span><br><span class="line">			numofXd2++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			numofOd2++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (numofXd1 == size || numofXd2 == size)</span><br><span class="line">	&#123;</span><br><span class="line">		result = 1;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (numofOd1 == size || numofOd2 == size)</span><br><span class="line">	&#123;</span><br><span class="line">		result = 0;</span><br><span class="line">	&#125;	</span><br><span class="line">	</span><br><span class="line">	//输出结果 </span><br><span class="line">	switch (result)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">case</span> -1:</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;没有人赢\n&quot;</span>);</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">		<span class="keyword">case</span> 0:</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;O\n&quot;</span>);</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">		<span class="keyword">case</span> 1:</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;X\n&quot;</span>);</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">		default:</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;Error!\n&quot;</span>);</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>python</tag>
+        <tag>C</tag>
+        <tag>game</tag>
       </tags>
   </entry>
   <entry>
@@ -78,19 +91,6 @@
         <tag>python</tag>
         <tag>openCV</tag>
         <tag>pycharm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>二维数组井字棋</title>
-    <url>/posts/3f2eafc3.html</url>
-    <content><![CDATA[<h1 id="tic-tac-toe游戏"><a href="#tic-tac-toe游戏" class="headerlink" title="tic-tac-toe游戏"></a>tic-tac-toe游戏</h1><p>  读入一个3×3矩阵，矩阵中的数字为1表示该位置上有一个X，为0表示该位置上有一个O，要求编写程序判断这个矩阵中是否有获胜的一方，输出表示获胜一方的字符X或O，或输出无人获胜。
-  </p>
-<p> 本游戏获胜是指在同一行、同一列或同一对角线上，有三个相同字符。</p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"> <span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">	//定义变量 </span><br><span class="line">	const int size = 3;</span><br><span class="line">	int board[size][size];</span><br><span class="line">	int i, j;</span><br><span class="line">	int numofXr, numofOr;  //numofXr表示同一行row中X的个数， numofOr表示同一行中O的个数</span><br><span class="line">	int numofXc, numofOc;  //numofXc表示同一列column中X的个数， numofOc示同一列中O的个数</span><br><span class="line">	int numofXd1, numofOd1, numofXd2, numofOd2;  //numofXd表示对角线diagonal上X的个数， numofOd表示对角线上O的个数，d1表示主对角线，d2表示次对角线 </span><br><span class="line">	int result = -1;  // -1表示没人赢，1表示X赢，0表示O赢</span><br><span class="line">	</span><br><span class="line">		</span><br><span class="line">	//读入矩阵</span><br><span class="line">	<span class="keyword">for</span> (i=0; i&lt;size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (j=0; j&lt;size; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			scanf(<span class="string">&quot;%d&quot;</span>, &amp;board[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	//判断行和列 </span><br><span class="line">	<span class="keyword">for</span> (i=0; i&lt;size &amp;&amp; result==-1; i++) </span><br><span class="line">	&#123;</span><br><span class="line">		numofXr =  numofOr = numofXc = numofOc = 0;</span><br><span class="line">		<span class="keyword">for</span> (j=0; j&lt;size; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			//判断行</span><br><span class="line">			<span class="keyword">if</span> (board[i][j] == 1)</span><br><span class="line">			&#123;</span><br><span class="line">				numofXr++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				numofOr++;</span><br><span class="line">			&#125;</span><br><span class="line">			//判断列</span><br><span class="line">			<span class="keyword">if</span> (board[j][i] == 1)</span><br><span class="line">			&#123;</span><br><span class="line">				numofXc++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				numofOc++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (numofXr == size || numofXc == size)</span><br><span class="line">		&#123;</span><br><span class="line">			result = 1;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (numofOr == size || numofOc == size)</span><br><span class="line">		&#123;</span><br><span class="line">			result = 0;</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	//判断对角线 </span><br><span class="line">	numofXd1 = numofOd1 = numofXd2 = numofOd2 = 0;  //此处初始化值需要在循环外面，而在判断行与列时初始化在循环里面，注意区分。 </span><br><span class="line">	<span class="keyword">for</span> (i=0; i&lt;size &amp;&amp; result==-1; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (board[i][i] == 1)</span><br><span class="line">		&#123;</span><br><span class="line">			numofXd1++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			numofOd1++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (board[i][size-i-1] == 1)</span><br><span class="line">		&#123;</span><br><span class="line">			numofXd2++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			numofOd2++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (numofXd1 == size || numofXd2 == size)</span><br><span class="line">	&#123;</span><br><span class="line">		result = 1;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (numofOd1 == size || numofOd2 == size)</span><br><span class="line">	&#123;</span><br><span class="line">		result = 0;</span><br><span class="line">	&#125;	</span><br><span class="line">	</span><br><span class="line">	//输出结果 </span><br><span class="line">	switch (result)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">case</span> -1:</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;没有人赢\n&quot;</span>);</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">		<span class="keyword">case</span> 0:</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;O\n&quot;</span>);</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">		<span class="keyword">case</span> 1:</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;X\n&quot;</span>);</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">		default:</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;Error!\n&quot;</span>);</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>C</tag>
-        <tag>game</tag>
       </tags>
   </entry>
   <entry>
@@ -156,6 +156,21 @@
       </tags>
   </entry>
   <entry>
+    <title>关于hexo 首页图片无法显示解决方法</title>
+    <url>/posts/428be35.html</url>
+    <content><![CDATA[<p><img src="/images/pasted-6.png" alt="upload successful"></p>
+<p>有时Markdown可以显示图片，而上传hexo后无法显示图片，只要在Markdown的图片显示链接中将“\”修改为“/”，同时删除第一个和最后一个“\”</p>
+<p><img src="/images/pasted-3.png" alt="upload successful"></p>
+<p>修改为</p>
+<p><img src="/images/pasted-4.png" alt="upload successful"></p>
+<p>即可显示在hexo</p>
+]]></content>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>微信小程序苹果机型iOS连接蓝牙失败解决方法（wx.getBLEDeviceCharacteristics）</title>
     <url>/posts/8ece9ac1.html</url>
     <content><![CDATA[<p>iOS在进行wx.getBLEDeviceCharacteristics获得特征值时，serviceId对应的uuid必须为大写才可以，否则抛出错误。</p>
@@ -169,21 +184,6 @@
         <tag>Java</tag>
         <tag>IOS</tag>
         <tag>android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于hexo 首页图片无法显示解决方法</title>
-    <url>/posts/428be35.html</url>
-    <content><![CDATA[<p><img src="/images/pasted-6.png" alt="upload successful"></p>
-<p>有时Markdown可以显示图片，而上传hexo后无法显示图片，只要在Markdown的图片显示链接中将“\”修改为“/”，同时删除第一个和最后一个“\”</p>
-<p><img src="/images/pasted-3.png" alt="upload successful"></p>
-<p>修改为</p>
-<p><img src="/images/pasted-4.png" alt="upload successful"></p>
-<p>即可显示在hexo</p>
-]]></content>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
